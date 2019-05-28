@@ -13,13 +13,38 @@ export const HeaderWrapper = styled.div`
     max-width: 100%;
     background: #ffffff;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 16px 16px;
 
+    /* Mobile Styles */
+    @media only screen and (max-width: 400px) {
+        flex-flow: row wrap;
+        ul,
+        li {
+            display: block;
+            margin: 0 auto;
+        }
+        .title {
+            flex-basis: 100%;
+            text-align: center;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .link-menu {
+            font-size: 1.25em;
+            text-align: center;
+        }
+    }
+
     .title {
-        font-size: 2rem;
+        font-size: 1.5em;
         text-decoration: none;
         font-weight: 600;
         color: #1c2e63;
@@ -34,7 +59,7 @@ export const HeaderWrapper = styled.div`
 
     .link-menu {
         color: #1c2e63;
-        display: inline-block;
+        display: block;
         margin-left: 0.5em;
         text-decoration: none;
     }

@@ -66,7 +66,6 @@ class App extends Component {
 
     render() {
         return (
-            // <div className="App">
             <Grommet>
                 <Header />
                 {/* <Account account={this.state.account} /> */}
@@ -74,14 +73,19 @@ class App extends Component {
                 <Box
                     background="url(/header-cover.jpeg)"
                     height="medium"
-                    alignContent="center"
+                    align="center"
                     responsive="true"
+                    pad="large"
                 >
                     {/* the styles need to be customized further */}
-                    <Heading level="1" size="xlarge" textAlign="center">
+                    <Heading level="1" size="xlarge" color="#F6F8EC">
                         Green Studio
                     </Heading>
-                    <Heading level="3" textAlign="center">
+                    <Heading
+                        level="3"
+                        color="#F6F8EC"
+                        margin={{ top: "medium" }}
+                    >
                         Find your plant companion here.
                     </Heading>
                 </Box>
