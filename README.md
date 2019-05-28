@@ -9,3 +9,6 @@ This project is a concept e-commerce website using the React framework.
 - [ ] Use Styled Components to lay down the design foundation
 - [ ] Design the site for responsiveness
 - [ ] Improve UI/UX
+- [ ] Populate Cart page
+- [ ] Populate Account page
+- [ ] Organize folder structure
