@@ -13,12 +13,19 @@ class Header extends Component {
                 </Link>
 
                 <div className="menu">
-                    <Link to="/cart" className="link-menu">
-                        Cart{" "}
-                    </Link>
-                    <Link to="/account" className="link-menu">
-                        Account{" "}
-                    </Link>
+                    <ul>
+                        <li>
+                            <Link to="/cart" className="link-menu">
+                                Cart{" "}
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/account" className="link-menu">
+                                Account{" "}
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </HeaderWrapper>
         );

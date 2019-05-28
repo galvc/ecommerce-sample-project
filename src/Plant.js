@@ -22,7 +22,7 @@ class Item extends Component {
         return (
             <Box
                 animation="slideDown"
-                background="#D7F2BA"
+                background="white"
                 pad="small"
                 margin="small"
                 round="small"
@@ -34,7 +34,9 @@ class Item extends Component {
             >
                 <Img src={image} alt={name} />
                 <section className="item-header">
-                    <Heading level="4">{name}</Heading>
+                    <Heading level="4" color="#254D32">
+                        {name}
+                    </Heading>
                     <span className="price">${price}</span>
                 </section>
 
