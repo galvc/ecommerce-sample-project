@@ -72,6 +72,11 @@ export const Img = styled.img`
     object-position: center center;
 `;
 
+export const ImgCart = styled(Img)`
+    width: 200px;
+    height: 200px;
+`;
+
 export const Button = styled.button`
     background: none;
     padding: 0.5rem;
@@ -94,4 +99,21 @@ export const MainBox = styled.div`
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: flex-start;
+`;
+
+export const CartLayout = styled.div`
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 64px;
+    grid-template-areas: "preview-cart checkout-summary";
+    justify-content: space-evenly;
+
+    .preview-cart {
+        grid-area: preview-cart;
+    }
+
+    .checkout-summary {
+        grid-area: checkout-summary;
+    }
 `;

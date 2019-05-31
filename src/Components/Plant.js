@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Box, Heading } from "grommet";
-import { Img, Button } from "./style.js";
-import "./index.css";
+import { Img, Button } from "../styles/style.js";
+import "../styles/index.css";
 
+//index is key passed from the map in main.js
 class Item extends Component {
     addToCart = () => {
         this.props.addToCart(this.props.index);
