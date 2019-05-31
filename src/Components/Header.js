@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Header.css";
-import { HeaderWrapper } from "./style.js";
+import "../styles/Header.css";
+import { HeaderWrapper } from "../styles/style.js";
 
 import { Link } from "react-router-dom";
 

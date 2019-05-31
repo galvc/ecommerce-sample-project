@@ -7,6 +7,10 @@
     line-height: 1.5;
 }
 
+.wrap {
+    padding: 2rem 3rem;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
@@ -37,4 +41,13 @@ li {
 .cart-button {
     margin: 1rem auto;
     display: flex;
+}
+
+.cart-item {
+    display: flex;
+    padding: 0.75rem 0;
+}
+
+.cart-item-desc {
+    padding: 2rem;
 }

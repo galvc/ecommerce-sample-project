@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import sampleInventory from "./sample-inventory";
+import sampleInventory from "../sample-inventory";
 import Account from "./Account";
 import Header from "./Header";
 import Cart from "./Cart";
 import Main from "./Main";
 import Checkout from "./Checkout";
 // import { AppStyle } from "./style.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Grid, Box, Grommet, Heading } from "grommet";
+import { Route, Link } from "react-router-dom";
 
 class App extends Component {
     constructor() {
@@ -30,6 +29,11 @@ class App extends Component {
     addToCart = (key) => {
         const cart = { ...this.state.cart };
         cart[key] = cart[key] + 1 || 1;
+        //cart[key] is # of items for particular item
+        //key is object name ex plant4
+        //this.state.inventory[key] is an object
+        //this.state.inventory[key].price returns the price of that object
+
         this.setState({
             cart
         });
@@ -66,29 +70,10 @@ class App extends Component {
 
     render() {
         return (
-            <Grommet>
-                <Header />
+            <div>
                 {/* <Account account={this.state.account} /> */}
                 {/* the screen changes within the div */}
-                <Box
-                    background="url(/header-cover.jpeg)"
-                    height="medium"
-                    align="center"
-                    responsive="true"
-                    pad="large"
-                >
-                    {/* the styles need to be customized further */}
-                    <Heading level="1" size="xlarge" color="#F6F8EC">
-                        Green Studio
-                    </Heading>
-                    <Heading
-                        level="3"
-                        color="#F6F8EC"
-                        margin={{ top: "medium" }}
-                    >
-                        Find your plant companion here.
-                    </Heading>
-                </Box>
+                <Header />
                 <Route
                     exact
                     path="/"
@@ -113,7 +98,7 @@ class App extends Component {
                         <Cart
                             {...props}
                             cart={this.state.cart}
-                            plants={this.state.inventory}
+                            inventory={this.state.inventory}
                         />
                     )}
                 />
@@ -130,7 +115,7 @@ class App extends Component {
 
                 <Route path="/checkout" render={(props) => <Checkout />} />
                 {/* </div> */}
-            </Grommet>
+            </div>
         );
     }
 }
