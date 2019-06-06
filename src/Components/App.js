@@ -5,6 +5,8 @@ import Header from "./Header";
 import Cart from "./Cart";
 import Main from "./Main";
 import Checkout from "./Checkout";
+import Payment from "./Payment";
+import ThankYou from "./ThankYou";
 // import { AppStyle } from "./style.js";
 import { Route, Link } from "react-router-dom";
 
@@ -113,8 +115,29 @@ class App extends Component {
                     )}
                 />
 
-                <Route path="/checkout" render={(props) => <Checkout />} />
-                {/* </div> */}
+                <Route
+                    path="/checkout"
+                    render={(props) => (
+                        <Checkout
+                            {...props}
+                            cart={this.state.cart}
+                            inventory={this.state.inventory}
+                        />
+                    )}
+                />
+
+                <Route
+                    path="/payment"
+                    render={(props) => (
+                        <Payment
+                            {...props}
+                            cart={this.state.cart}
+                            inventory={this.state.inventory}
+                        />
+                    )}
+                />
+
+                <Route path="/thank-you" component={ThankYou} />
             </div>
         );
     }

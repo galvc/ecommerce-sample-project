@@ -1,68 +1,62 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Summary from "./Summary";
 import { Heading } from "grommet";
+import { Link } from "react-router-dom";
 import { CartLayout } from "../styles/style.js";
 import "../styles/index.css";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
-class Checkout extends Component {
+class Payment extends Component {
     render() {
         const { cart, inventory } = this.props;
         console.log("this is cart props " + cart);
         return (
             <div className="wrap">
-                <Heading level="1">Contact Information</Heading>
+                <Heading level="1">Payment Information</Heading>
                 <CartLayout>
                     <div className="cart-grid-a">
+                        <Heading level="5">Payment Methods</Heading>
+                        <select className="select__pymt-wrap">
+                            <option>Choose a Payment Method</option>
+                            <option>Credit Card</option>
+                        </select>
+                        <div className="select__caret" />
+                        <Heading level="3">Credit Card Information</Heading>
+
                         <form>
-                            <input
-                                placeholder="Enter your first name"
-                                className="name"
-                            />
+                            <input placeholder="Enter name on your card" />
 
-                            <input
-                                placeholder="Enter your last name"
-                                className="name"
-                            />
-
-                            <input placeholder="Enter your email address" />
-
-                            <input placeholder="Enter your phone number (optional) " />
-                        </form>
-                        <Heading level="3">Shipping Information</Heading>
-                        <form>
-                            <input placeholder="Enter your shipping address" />
-                            <input placeholder="Apartment, suite, etc (optional)" />
+                            <input placeholder="Enter your card number" />
 
                             <div className="label__select-wrapper">
-                                <label>Country/Region</label>
+                                <label>Month</label>
                                 <select>
-                                    <option>United States</option>
+                                    <option>Jan</option>
                                 </select>
                                 <div className="select__caret">
                                     <MdKeyboardArrowDown size={24} />
                                 </div>
                             </div>
                             <div className="label__select-wrapper">
-                                <label>State</label>
+                                <label>Year</label>
                                 <select>
-                                    <option>Washington</option>
+                                    <option>2020</option>
                                 </select>
                                 <div className="select__caret">
                                     <MdKeyboardArrowDown size={24} />
                                 </div>
                             </div>
 
+                            <input placeholder="CVV" className="input_small" />
                             <input
                                 placeholder="Zip code"
                                 className="input_small"
                             />
                         </form>
                     </div>
-                    <Link to="/payment">
+                    <Link to="/thank-you">
                         <button className="btn_checkout">
-                            Proceed to Checkout
+                            Finish Checkout
                             <MdKeyboardArrowRight size={24} />
                         </button>
                     </Link>
@@ -76,4 +70,4 @@ class Checkout extends Component {
     }
 }
 
-export default Checkout;
+export default Payment;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/Header.css";
+import "../styles/header.css";
 import { HeaderWrapper } from "../styles/style.js";
 
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ class Header extends Component {
                 </Link>
 
                 <div className="menu">
+                
                     <ul>
                         <li>
                             <Link to="/cart" className="link-menu">

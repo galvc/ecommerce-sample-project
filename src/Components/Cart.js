@@ -1,83 +1,58 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import PreviewCart from "./PreviewCart";
-import ThankYou from "./ThankYou";
+import Summary from "./Summary";
+import Checkout from "./Checkout";
 import { Heading } from "grommet";
-import { CartLayout } from "../styles/style.js";
+import { ImgCart, CartLayout } from "../styles/style.js";
 import "../styles/index.css";
 
 class Cart extends Component {
-    //adds the total number of all purchases regardless of item
-    //IMPROVEMENT: lift this function up to App so that the header can use
-    //the count number
-    totalCount = (orderKeys) => {
-        var total = [];
-        orderKeys.map((key) => {
-            total.push(this.props.cart[key]);
-        });
+    displayOrder = (key) => {
+        // the key is the name of the object
+        const inventory = this.props.inventory[key];
+        const count = this.props.cart[key];
+        console.log("this is plant " + inventory);
+        console.log("this is key " + key);
+        console.log("this is count " + count);
 
-        return total.reduce((prev, curr) => {
-            return prev + curr;
-        }, 0);
-    };
-
-    subtotal = (orderKeys) => {
-        //orderKeys comes from cart
-        //retrieve the price from plant
-        //multiply with no of items in cart[key]
-        //cross reference with cart[key] and plant name
-        //orderKeys gives me ALL the object names, from CART
-        //orderKeys[key] gives me one object name
-        //inventory gives an object
-        console.log("from subtotal" + orderKeys);
-        const subtotal = orderKeys.reduce((prevTotal, key) => {
-            const inventory = this.props.inventory[key];
-            const cart = this.props.cart[key]; //gives quantity..
-            //order
-            // console.log("this is inventory[key] " + inventory[key]);
-            //just give the inventory price
-            return prevTotal + inventory.price * cart;
-        }, 0);
-
-        console.log("this is the subtotal " + subtotal);
-        return subtotal;
+        return (
+            <li key={key} className="cart-item">
+                <ImgCart src={inventory.image} />
+                <span className="cart-item-desc">
+                    {inventory.name} : {count}
+                </span>
+            </li>
+        );
     };
 
     render() {
         // an object of all our orders, returns object name
         const orderKeys = Object.keys(this.props.cart);
-        const count = this.totalCount(orderKeys);
-        const subtotal = this.subtotal(orderKeys);
-        // this will display an object of plant names
+        const { cart, inventory } = this.props;
+
         return (
             <div className="wrap">
-                <Heading level="1">Checkout ({count})</Heading>
+                <Heading level="1">Checkout</Heading>
 
                 <CartLayout>
-                    <div className="preview-cart">
-                        <PreviewCart
-                            orderKeys={orderKeys}
-                            inventory={this.props.inventory}
-                            cart={this.props.cart}
-                        />
+                    <div className="cart-grid-a">
+                        {orderKeys.length > 0 ? (
+                            <ul>
+                                {orderKeys.map((key) => this.displayOrder(key))}
+                            </ul>
+                        ) : (
+                            "The cart is empty."
+                        )}
 
-                        <Link to="/thank-you">Thank You</Link>
-                        <Switch>
-                            <Route
-                                exact
-                                path="/preview-cart"
-                                render={(props) => <PreviewCart {...props} />}
-                            />
-                            <Route path="/thank-you" component={ThankYou} />
-                        </Switch>
-                    </div>
-                    <div className="checkout-summary">
-                        <Heading level="4">Total Items: {count} </Heading>
-                        <Heading level="2">Subtotal</Heading> $ {subtotal}
-                        <p />
+                        <button>Back</button>
                         <Link to="/checkout">
-                            <button> Proceed to Checkout </button>
+                            <button className="btn_checkout">
+                                Proceed to Checkout
+                            </button>
                         </Link>
+                    </div>
+                    <div className="cart-grid-b">
+                        <Summary cart={cart} inventory={inventory} />
                     </div>
                 </CartLayout>
             </div>
