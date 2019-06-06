@@ -4,7 +4,14 @@
     -moz-osx-font-smoothing: grayscale;
     font-family: "Open Sans";
     font-size: 14px;
+    font-weight: 300;
     line-height: 1.5;
+}
+
+form {
+    display: flex;
+    flex-flow: wrap;
+    margin: 10px 0;
 }
 
 .wrap {
@@ -14,6 +21,10 @@
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+}
+
+a {
+    color: #5E635F;
 }
 
 ul,
@@ -50,4 +61,99 @@ li {
 
 .cart-item-desc {
     padding: 2rem;
+}
+.summary-items-list {
+    margin-bottom: 16px;
+}
+.summary-items-list ul {
+    margin-left: 10px;
+}
+.li__summary-list {
+    display: block;
+}
+
+
+/* BUTTON STYLES */
+
+button.btn_checkout {
+    padding: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #9db5b2;
+    color: white;
+    width: 28%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* CHECKOUT STYLES */
+
+input {
+    border: 1px solid #e0e4ee;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input.name {
+    float: left;
+    width: 48%;
+}
+
+input.name:first-child {
+    margin-right: 15px;
+}
+
+input.input_small {
+    float: left;
+    width: 24%;
+    margin-right: 10px;
+}
+
+.label__select-wrapper {
+    border: 1px solid #e0e4ee;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    font-size: 0.15em;
+    color: #757575;
+    width: 20%;
+}
+
+.label__select-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: 1px transparent solid;
+    background: transparent;
+}
+
+.label__select-wrapper label {
+    display: block;
+}
+
+.select__caret {
+    /* this is the down arrow */
+    float: right;
+    width: 40px;
+    top: 25%;
+    right: 0;
+}
+
+.select__pymt-wrap {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: 1px #e0e4ee solid;
+    background: transparent;
+    margin: 16px 0 24px 16px;
+    padding: 10px;
+    color: #757575;
 }

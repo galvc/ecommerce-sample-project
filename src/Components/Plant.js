@@ -28,12 +28,13 @@ class Item extends Component {
                 margin="small"
                 round="small"
                 width="small"
-                height="medium"
+                height="500px"
                 responsive={true}
                 basis="medium"
                 overflow="visible"
             >
                 <Img src={image} alt={name} />
+                
                 <section className="item-header">
                     <Heading level="4" color="#254D32">
                         {name}

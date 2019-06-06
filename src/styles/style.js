@@ -16,7 +16,7 @@ export const HeaderWrapper = styled.div`
     flex-flow: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 16px;
+    padding: 16px 32px;
 
     /* Mobile Styles */
     @media only screen and (max-width: 400px) {
@@ -43,12 +43,14 @@ export const HeaderWrapper = styled.div`
         }
     }
 
-    .title {
+    .title, .title:visited, .title:active{
         font-size: 1.5em;
         text-decoration: none;
         font-weight: 600;
-        color: #1c2e63;
+        color: #3B413C;
     }
+
+    
 
     .menu {
         display: flex;
@@ -58,18 +60,39 @@ export const HeaderWrapper = styled.div`
     }
 
     .link-menu {
-        color: #1c2e63;
+        color: #3B413C;
         display: block;
         margin-left: 0.5em;
         text-decoration: none;
+        padding-right: 16px;
+
+
+    }
+
+    .link-menu::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background: #000;
+        transition: width .2s
+    }
+    .link-menu:hover::after {
+        width: 100%;
     }
 `;
 
 export const Img = styled.img`
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     object-position: center center;
+    transition: all 0.9s ease-out;
+    opacity: 1;
+
+    :hover {
+        opacity: 0.5;
+    }
 `;
 
 export const ImgCart = styled(Img)`
@@ -91,6 +114,7 @@ export const Button = styled.button`
         color: black;
         cursor: pointer;
     }
+    
 `;
 
 export const MainBox = styled.div`
@@ -106,14 +130,44 @@ export const CartLayout = styled.div`
     margin: 1rem 0;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 64px;
-    grid-template-areas: "preview-cart checkout-summary";
+    grid-template-areas: "cart-grid-a cart-grid-b";
     justify-content: space-evenly;
 
-    .preview-cart {
-        grid-area: preview-cart;
+    .cart-grid-a {
+        grid-area: cart-grid-a;
     }
 
-    .checkout-summary {
-        grid-area: checkout-summary;
+    .cart-grid-b {
+        grid-area: cart-grid-b;
+    }
+`;
+
+export const FooterContainer = styled.div`
+margin: 2em;
+padding: 2em;
+`;
+
+export const AboutGrid = styled.div`
+display: grid;
+margin: 3em auto;
+padding-right: 80px;
+grid-template-columns: 40% 60%;
+grid-column-gap: 32px;
+grid-template-areas: "about-grid-a about-grid-b";
+align-items: center; 
+
+    .about-grid-a {
+        grid-area: about-grid-a;
+    }
+
+    .about-grid-b {
+        grid-area: about-grid-b;
+   }
+
+    img {
+        width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center center;
     }
 `;
