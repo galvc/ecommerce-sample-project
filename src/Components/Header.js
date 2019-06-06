@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../styles/header.css";
 import { HeaderWrapper } from "../styles/style.js";
 
 import { Link } from "react-router-dom";
