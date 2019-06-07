@@ -23,3 +23,5 @@ I am using: React Router, styled components
 - [ ] Create a working order state
 - [ ] Add Sass plugin
 - [ ] Implement React router history for navigation
+- [ ] Improve Summary UI
+- [ ] Allow for increasing/decreasing of item purchase in Cart page
