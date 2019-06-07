@@ -13,7 +13,9 @@ form {
     flex-flow: wrap;
     margin: 10px 0;
 }
-
+strong {
+    font-weight: 400;
+}
 .wrap {
     padding: 2rem 3rem;
 }
@@ -24,7 +26,7 @@ code {
 }
 
 a {
-    color: #5E635F;
+    color: #5e635f;
 }
 
 ul,
@@ -72,20 +74,7 @@ li {
     display: block;
 }
 
-
 /* BUTTON STYLES */
-
-button.btn_checkout {
-    padding: 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: #9db5b2;
-    color: white;
-    width: 28%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
 
 /* CHECKOUT STYLES */
 
@@ -156,4 +145,19 @@ input.input_small {
     margin: 16px 0 24px 16px;
     padding: 10px;
     color: #757575;
+}
+
+@media only screen and (max-width: 480px) {
+    form {
+        display: block;
+    }
+
+    .label__select-wrapper {
+        display: block;
+        width: 90%;
+    }
+
+    input.input_small {
+        width: 90%;
+    }
 }

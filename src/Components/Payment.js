@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Summary from "./Summary";
+import CartPagination from "./CartPagination";
 import { Heading } from "grommet";
 import { Link } from "react-router-dom";
 import { CartLayout } from "../styles/style.js";
@@ -54,12 +55,11 @@ class Payment extends Component {
                             />
                         </form>
                     </div>
-                    <Link to="/thank-you">
-                        <button className="btn_checkout">
-                            Finish Checkout
-                            <MdKeyboardArrowRight size={24} />
-                        </button>
-                    </Link>
+                    <CartPagination
+                        back="/checkout"
+                        forward="/thank-you"
+                        label="Finish Order"
+                    />
 
                     <div className="cart-grid-b">
                         <Summary cart={cart} inventory={inventory} />

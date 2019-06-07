@@ -4,6 +4,7 @@ import Summary from "./Summary";
 import Checkout from "./Checkout";
 import { Heading } from "grommet";
 import { ImgCart, CartLayout } from "../styles/style.js";
+import CartPagination from "./CartPagination";
 import "../styles/index.css";
 
 class Cart extends Component {
@@ -37,19 +38,22 @@ class Cart extends Component {
                 <CartLayout>
                     <div className="cart-grid-a">
                         {orderKeys.length > 0 ? (
-                            <ul>
-                                {orderKeys.map((key) => this.displayOrder(key))}
-                            </ul>
+                            <div>
+                                <ul>
+                                    {orderKeys.map((key) =>
+                                        this.displayOrder(key)
+                                    )}
+                                </ul>
+                                <CartPagination
+                                    back="/"
+                                    forward="/checkout"
+                                    label="Proceed to Checkout"
+                                />
+                            </div>
                         ) : (
-                            "The cart is empty."
+                            "Your cart is empty."
                         )}
-
-                        <button>Back</button>
-                        <Link to="/checkout">
-                            <button className="btn_checkout">
-                                Proceed to Checkout
-                            </button>
-                        </Link>
+                        <p />
                     </div>
                     <div className="cart-grid-b">
                         <Summary cart={cart} inventory={inventory} />
