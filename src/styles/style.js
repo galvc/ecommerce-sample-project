@@ -162,7 +162,7 @@ export const CartPaginationWrap = styled.ul`
 
 export const CartLayout = styled.div`
     display: grid;
-    margin: 2em 4em;
+    margin: 1rem 0;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 48px;
     grid-template-areas: "cart-grid-a cart-grid-b";
@@ -291,8 +291,8 @@ export const CartItem = styled.li`
     padding: 0.75rem 0;
 
     img {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
 
     span {
