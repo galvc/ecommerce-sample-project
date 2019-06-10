@@ -16,7 +16,7 @@ class Cart extends Component {
 
         return (
             <CartItem key={key}>
-                <img src={inventory.image} alt="inventory item" />
+                <img src={inventory.thumb} alt="inventory item" />
                 <span>
                     {inventory.name} : {count}
                 </span>
