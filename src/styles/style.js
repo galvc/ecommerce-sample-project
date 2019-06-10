@@ -1,13 +1,4 @@
-import styled from "styled-components";
-
-// export const StyledLink = styled(Link)`
-//     color: blue;
-//     font-weight: bold;
-// `;
-
-export const AppStyle = styled.div`
-    color: blue;
-`;
+import styled, { css } from "styled-components";
 
 export const HeaderWrapper = styled.div`
     max-width: 100%;
@@ -93,25 +84,52 @@ export const Img = styled.img`
     }
 `;
 
-export const ImgCart = styled(Img)`
-    width: 200px;
-    height: 200px;
-`;
-
 export const Button = styled.button`
-    background: none;
-    padding: 0.5rem;
-    border: 1px solid #dddddd;
-    transition: all 0.3s ease-in-out;
-    color: #2f2f2f;
-    align-self: flex-end;
+    display: flex;
+    margin: 1rem auto;
+    padding: 0.75em 1em;
+    text-decoration: none;
 
-    &:hover {
-        border: 1px solid #aaaaaa;
-        transition: 0;
-        color: black;
-        cursor: pointer;
+    :hover {
+        border-color: ${(props) => props.secondary && `#5e635f`};
+        pointer: cursor;
     }
+
+    ${(props) =>
+        props.primary &&
+        css`
+            background-color: #5e635f;
+            color: white;
+            width: auto;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        `};
+
+    ${(props) =>
+        props.secondary &&
+        css`
+            background: none;
+            padding: 0.5rem;
+            border: 1px solid #dddddd;
+            transition: all 0.3s ease-in-out;
+            color: #2f2f2f;
+            align-self: flex-end;
+        `};
+
+    ${(props) =>
+        props.large &&
+        css`
+            padding: 0.75em 1em;
+        `};
+
+    ${(props) =>
+        props.disabled &&
+        css`
+            background: #dddddd;
+            border: none;
+            color: #757575;
+        `};
 `;
 
 export const MainBox = styled.div`
@@ -125,25 +143,9 @@ export const MainBox = styled.div`
 export const CartPaginationWrap = styled.ul`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 1em 0;
 
-    button, button: visited, button: active {
-        padding: 0.75em 1em;
-        border-radius: 5px;
-        border: 1px solid #9db5b2;
-        background-color: #9db5b2;
-        color: white;
-        width: auto;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
-
-    .secondary {
-        background-color: transparent;
-        color: #9db5b2;
-        font-weight: 400;
-    }
     @media only screen and (max-width: 480px) {
         display: block;
 
@@ -156,9 +158,9 @@ export const CartPaginationWrap = styled.ul`
 
 export const CartLayout = styled.div`
     display: grid;
-    margin: 1rem 0;
+    margin: 2em 4em;
     grid-template-columns: 2fr 1fr;
-    grid-column-gap: 64px;
+    grid-column-gap: 48px;
     grid-template-areas: "cart-grid-a cart-grid-b";
     justify-content: space-evenly;
 
@@ -174,33 +176,6 @@ export const CartLayout = styled.div`
         display: block;
     }
 `;
-
-// export const CartGridNav = styled.div`
-// display: grid;
-// grid-template-columns: 1fr 1fr;
-// justify-content: space-between;
-// align-items: center;
-// grid-template-areas: "cart-grid-nav-a cart-grid-nav-b";
-
-// .cart-grid-nav-a{
-//     grid-area: cart-grid-nav-a;
-
-// }
-// .cart-grid-nav-b{
-//     grid-area: cart-grid-nav-b;
-
-//     button {
-//         float: right;
-//         width: auto;
-//     }
-
-//     @media only screen and (max-width: 480px) {
-//         .cart-grid-nav-a, .cart-grid-nav-b {
-//             width: 100%;
-//         }
-//     }
-// }
-// `;
 
 export const FooterContainer = styled.div`
     margin: 2em;
@@ -220,6 +195,17 @@ export const FooterContainer = styled.div`
     }
     .footer-grid-c {
         grid-area: footer-grid-c;
+    }
+
+    @media (max-width: 600px) {
+        display: block;
+        margin: 0 auto;
+
+        .footer-grid-a,
+        .footer-grid-b,
+        .footer-grid-c {
+            margin: 2em auto;
+        }
     }
 `;
 
@@ -246,6 +232,13 @@ export const AboutGrid = styled.div`
         object-fit: cover;
         object-position: center center;
     }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 0 1fr;
+        .about-grid-a {
+            display: none;
+        }
+    }
 `;
 
 export const ThankYouContainer = styled.div`
@@ -253,6 +246,7 @@ export const ThankYouContainer = styled.div`
     padding: 0 120px;
     text-align: center;
     line-height: 2em;
+
     p {
         font-size: 2em;
     }
@@ -261,5 +255,75 @@ export const ThankYouContainer = styled.div`
         width: auto;
         height: 300px;
         object-fit: cover;
+    }
+`;
+
+export const MainCover = styled.div`
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    padding: 2em;
+
+    margin: 0 auto;
+    clear: both;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/header-cover.jpg);
+    background-image: image-set(
+        url(/header-cover-sm.jpg) 1x,
+        url(/header-cover.jpg) 2x
+    );
+
+    @media (max-width: 600px) {
+        background-image: url(/header-cover-sm.jpg);
+        padding: 2em;
+    }
+`;
+
+export const CartItem = styled.li`
+    display: flex;
+    padding: 0.75rem 0;
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    span {
+        padding: 2rem;
+    }
+
+    @media (max-width: 600px) {
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        span {
+            padding: 1rem;
+        }
+    }
+`;
+
+export const SummaryItems = styled.section`
+    background-color: #ede8e1;
+    width: 80%;
+    padding: 1em;
+    section {
+        margin-bottom: 16px;
+    }
+
+    ul {
+        margin-left: 10px;
+    }
+
+    li {
+        display: block;
+    }
+
+    @media (max-width: 600px) {
+        width: auto;
     }
 `;

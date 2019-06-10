@@ -1,3 +1,6 @@
+@import "./variables";
+@import "./mixins";
+
 * {
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -16,9 +19,6 @@ form {
 strong {
     font-weight: 400;
 }
-.wrap {
-    padding: 2rem 3rem;
-}
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -26,7 +26,7 @@ code {
 }
 
 a {
-    color: #5e635f;
+    color: $dark-green;
 }
 
 ul,
@@ -51,44 +51,36 @@ li {
     display: inline-block;
 }
 
-.cart-button {
-    margin: 1rem auto;
-    display: flex;
+div.wrap {
+    padding: 3em;
+
+    @media (max-width: 600px) {
+        padding: 2rem 1rem;
+    }
 }
 
-.cart-item {
+.cover {
+    color: $cream;
     display: flex;
-    padding: 0.75rem 0;
+    justify-content: center;
+    font-size: 2.5em;
 }
 
-.cart-item-desc {
-    padding: 2rem;
-}
-.summary-items-list {
-    margin-bottom: 16px;
-}
-.summary-items-list ul {
-    margin-left: 10px;
-}
-.li__summary-list {
+.block {
     display: block;
 }
-
-/* BUTTON STYLES */
 
 /* CHECKOUT STYLES */
 
 input {
-    border: 1px solid #e0e4ee;
+    border: 1px solid $light-gray;
     border-radius: 5px;
     width: 100%;
     margin: 10px 0;
     padding: 10px;
     font-size: 1em;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    @include border-box;
 }
 
 input.name {
@@ -107,12 +99,12 @@ input.input_small {
 }
 
 .label__select-wrapper {
-    border: 1px solid #e0e4ee;
+    border: 1px solid $light-gray;
     border-radius: 5px;
     margin: 10px 10px 10px 0;
     padding: 10px;
     font-size: 0.15em;
-    color: #757575;
+    color: $dark-gray;
     width: 20%;
 }
 
@@ -140,11 +132,11 @@ input.input_small {
     -webkit-appearance: none;
     -moz-appearance: none;
 
-    border: 1px #e0e4ee solid;
+    border: 1px $light-gray solid;
     background: transparent;
     margin: 16px 0 24px 16px;
     padding: 10px;
-    color: #757575;
+    color: $dark-gray;
 }
 
 @media only screen and (max-width: 480px) {

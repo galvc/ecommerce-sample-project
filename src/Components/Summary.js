@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { SummaryItems } from "../styles/style.js";
 import { Heading } from "grommet";
 
 class Summary extends Component {
@@ -6,6 +7,11 @@ class Summary extends Component {
     //IMPROVEMENT: lift this function up to App so that the header can use
     //the count number
     totalCount = (orderKeys) => {
+        // var total = [];
+        // orderKeys.map((key) => {
+        //     total.push(this.props.cart[key]);
+        // });
+
         var total = orderKeys.map((key) => {
             return this.props.cart[key];
         });
@@ -53,19 +59,17 @@ class Summary extends Component {
         const count = this.totalCount(orderKeys);
         const subtotal = this.subtotal(orderKeys);
         return (
-            <div>
-                <section className="summary-items-list">
-                    <p>Items in Cart:</p>
-                    {orderKeys.length > 0 ? (
+            <SummaryItems>
+                <section>
+                    <Heading level="4">Items in Cart ({count}) </Heading>
+                    {orderKeys.length > 0 && (
                         <ul>{orderKeys.map((key) => this.displayList(key))}</ul>
-                    ) : (
-                        ""
                     )}
                 </section>
-                <p>Total Items: {count} </p>
+
                 <Heading level="4">Subtotal ${subtotal}</Heading>
                 <p />
-            </div>
+            </SummaryItems>
         );
     }
 }

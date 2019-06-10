@@ -10,8 +10,8 @@ function ThankYou() {
             <p>
                 Thank you for your purchase. Your dummy-receipt and
                 dummy-tracking number will be sent to your email in a few
-                moments. We hope to find you back here at Green Studio
-                <span role="img" aria-label="plant emoji">
+                moments. We hope to find you back here at Green Studio{" "}
+                <span role="img" aria-label="plant">
                     🌿
                 </span>
                 .

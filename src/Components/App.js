@@ -7,6 +7,7 @@ import Main from "./Main";
 import Checkout from "./Checkout";
 import Payment from "./Payment";
 import ThankYou from "./ThankYou";
+// import { AppStyle } from "./style.js";
 import { Route } from "react-router-dom";
 
 class App extends Component {
