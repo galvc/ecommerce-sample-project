@@ -1,3 +1,5 @@
+$green: #5e635f;
+
 * {
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -26,7 +28,7 @@ code {
 }
 
 a {
-    color: #5e635f;
+    color: $green;
 }
 
 ul,
@@ -51,10 +53,10 @@ li {
     display: inline-block;
 }
 
-.cart-button {
-    margin: 1rem auto;
-    display: flex;
-}
+// .cart-button {
+//     margin: 1rem auto;
+//     display: flex;
+// }
 
 .cart-item {
     display: flex;
@@ -73,8 +75,6 @@ li {
 .li__summary-list {
     display: block;
 }
-
-/* BUTTON STYLES */
 
 /* CHECKOUT STYLES */
 

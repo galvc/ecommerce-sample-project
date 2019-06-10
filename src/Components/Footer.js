@@ -31,7 +31,7 @@ function Footer() {
             <div className="footer-grid-c">
                 <strong>
                     Made with{" "}
-                    <span role="image" aria-label="heart">
+                    <span role="img" aria-label="heart">
                         ❤️
                     </span>
                     by

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Plant from "./Plant";
-import Footer from "./Footer"
-import { MainBox, AboutGrid } from "../styles/style.js";
+import Footer from "./Footer";
+import { MainBox, AboutGrid, MainCover } from "../styles/style.js";
 import { Box, Heading } from "grommet";
-
 
 class Main extends Component {
     addToCart = (index) => {
@@ -21,13 +20,14 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Box
+                {/* <Box
                     background="url(/header-cover.jpeg)"
                     height="medium"
                     align="center"
                     responsive="true"
                     pad="large"
-                >
+                > */}
+                <MainCover>
                     {/* the styles need to be customized further */}
                     <Heading level="1" size="xlarge" color="#F6F8EC">
                         Green Studio
@@ -39,17 +39,31 @@ class Main extends Component {
                     >
                         Find your plant companion here.
                     </Heading>
-                </Box>
+                    {/* </Box> */}
+                </MainCover>
 
                 <AboutGrid>
-                <div className="about-grid-a">
-                    <img src="/plants-about.jpeg" />
-                </div>
-                <div className="about-grid-b">
-                    <Heading level="2">What is Green Studio</Heading>
-                    <p>Green Studio encourages you to grow your indoor plant garden by offering plant starters that are great for beginners and those without green thumbs. Take a look and shop around. </p>
-                <em>Image taken from <a href="https://unsplash.com/photos/ZchXTnNWCOM">Unsplash</a></em>
-                </div>
+                    <div className="about-grid-a">
+                        <img
+                            src="/plants-about.jpeg"
+                            alt="cover for about-plants"
+                        />
+                    </div>
+                    <div className="about-grid-b">
+                        <Heading level="2">What is Green Studio</Heading>
+                        <p>
+                            Green Studio encourages you to grow your indoor
+                            plant garden by offering plant starters that are
+                            great for beginners and those without green thumbs.
+                            Take a look and shop around.{" "}
+                        </p>
+                        <em>
+                            Image taken from{" "}
+                            <a href="https://unsplash.com/photos/ZchXTnNWCOM">
+                                Unsplash
+                            </a>
+                        </em>
+                    </div>
                 </AboutGrid>
 
                 <MainBox>
@@ -66,7 +80,7 @@ class Main extends Component {
                         );
                     })}
                 </MainBox>
-                
+
                 <Footer />
             </div>
         );

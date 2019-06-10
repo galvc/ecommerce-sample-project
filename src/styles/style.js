@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // export const StyledLink = styled(Link)`
 //     color: blue;
@@ -99,19 +99,45 @@ export const ImgCart = styled(Img)`
 `;
 
 export const Button = styled.button`
-    background: none;
-    padding: 0.5rem;
-    border: 1px solid #dddddd;
-    transition: all 0.3s ease-in-out;
-    color: #2f2f2f;
-    align-self: flex-end;
 
-    &:hover {
-        border: 1px solid #aaaaaa;
-        transition: 0;
-        color: black;
-        cursor: pointer;
+    display: flex;
+    margin: 1rem auto;
+    padding: 0.75em 1em;
+    text-decoration: none;
+
+    :hover {
+        border-color: ${(props) => props.secondary && `#5e635f`}
+        pointer: cursor;
     }
+
+    ${(props) =>
+        props.primary &&
+        css`
+            border: 1px solid #5e635f;
+            background-color: #5e635f;
+            color: white;
+            width: auto;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        `};
+
+    ${(props) =>
+        props.secondary &&
+        css`
+            background: none;
+            padding: 0.5rem;
+            border: 1px solid #dddddd;
+            transition: all 0.3s ease-in-out;
+            color: #2f2f2f;
+            align-self: flex-end;
+        `};
+
+    ${(props) =>
+        props.large &&
+        css`
+            padding: 0.75em 1em;
+        `};
 `;
 
 export const MainBox = styled.div`
@@ -125,9 +151,10 @@ export const MainBox = styled.div`
 export const CartPaginationWrap = styled.ul`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 1em 0;
 
-    button, button: visited, button: active {
+    ${"" /* button, button: visited, button: active {
         padding: 0.75em 1em;
         border-radius: 5px;
         border: 1px solid #9db5b2;
@@ -137,13 +164,8 @@ export const CartPaginationWrap = styled.ul`
         text-decoration: none;
         display: flex;
         align-items: center;
-    }
+    } */}
 
-    .secondary {
-        background-color: transparent;
-        color: #9db5b2;
-        font-weight: 400;
-    }
     @media only screen and (max-width: 480px) {
         display: block;
 
@@ -175,33 +197,6 @@ export const CartLayout = styled.div`
     }
 `;
 
-// export const CartGridNav = styled.div`
-// display: grid;
-// grid-template-columns: 1fr 1fr;
-// justify-content: space-between;
-// align-items: center;
-// grid-template-areas: "cart-grid-nav-a cart-grid-nav-b";
-
-// .cart-grid-nav-a{
-//     grid-area: cart-grid-nav-a;
-
-// }
-// .cart-grid-nav-b{
-//     grid-area: cart-grid-nav-b;
-
-//     button {
-//         float: right;
-//         width: auto;
-//     }
-
-//     @media only screen and (max-width: 480px) {
-//         .cart-grid-nav-a, .cart-grid-nav-b {
-//             width: 100%;
-//         }
-//     }
-// }
-// `;
-
 export const FooterContainer = styled.div`
     margin: 2em;
     padding: 2em;
@@ -220,6 +215,17 @@ export const FooterContainer = styled.div`
     }
     .footer-grid-c {
         grid-area: footer-grid-c;
+    }
+
+    @media (max-width: 600px) {
+        display: block;
+        margin: 0 auto;
+
+        .footer-grid-a,
+        .footer-grid-b,
+        .footer-grid-c {
+            margin: 2em auto;
+        }
     }
 `;
 
@@ -246,6 +252,13 @@ export const AboutGrid = styled.div`
         object-fit: cover;
         object-position: center center;
     }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 0 1fr;
+        .about-grid-a {
+            display: none;
+        }
+    }
 `;
 
 export const ThankYouContainer = styled.div`
@@ -261,5 +274,26 @@ export const ThankYouContainer = styled.div`
         width: auto;
         height: 300px;
         object-fit: cover;
+    }
+`;
+
+export const MainCover = styled.div`
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    margin: 0;
+    clear: both;
+
+    background-size: cover;
+    background-position: center;
+    background-image: url(/header-cover.jpg);
+    background-image: image-set(
+        url(/header-cover-sm.jpg) 1x,
+        url(/header-cover.jpg) 2x
+    );
+
+    @media (max-width: 600px) {
+        background-image: url(/header-cover-sm.jpg);
+        padding: 2em;
     }
 `;

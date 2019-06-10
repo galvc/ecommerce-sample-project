@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Summary from "./Summary";
 import CartPagination from "./CartPagination";
 import { Heading } from "grommet";
-import { Link } from "react-router-dom";
 import { CartLayout } from "../styles/style.js";
-import "../styles/index.css";
-import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import "../styles/index.scss";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 class Payment extends Component {
     render() {
