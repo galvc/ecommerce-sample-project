@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CartPaginationWrap, Button } from "../styles/style.js";
+import { CartPaginationWrap } from "../styles/style.js";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 function CartPagination(props) {
@@ -10,18 +10,16 @@ function CartPagination(props) {
         <CartPaginationWrap>
             <li>
                 <Link to={back}>
-                    <Button secondary large>
-                        Back
-                    </Button>
+                    <button className="secondary">Back</button>
                 </Link>
             </li>
 
             <li>
                 <Link to={forward}>
-                    <Button primary>
+                    <button className="btn_checkout">
                         {label}
                         <MdKeyboardArrowRight size={24} />
-                    </Button>
+                    </button>
                 </Link>
             </li>
         </CartPaginationWrap>

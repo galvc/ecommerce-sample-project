@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Box, Heading } from "grommet";
 import { Img, Button } from "../styles/style.js";
-import "../styles/index.scss";
+import "../styles/index.css";
 
 //index is key passed from the map in main.js
 class Item extends Component {
@@ -34,7 +34,7 @@ class Item extends Component {
                 overflow="visible"
             >
                 <Img src={image} alt={name} />
-
+                
                 <section className="item-header">
                     <Heading level="4" color="#254D32">
                         {name}
@@ -45,10 +45,7 @@ class Item extends Component {
                 <span className="description">{description}</span>
 
                 <span className="cart-button">
-                    <Button secondary onClick={this.addToCart}>
-                        {" "}
-                        Purchase{" "}
-                    </Button>
+                    <Button onClick={this.addToCart}> Purchase </Button>
                 </span>
 
                 {/* <Button onClick={this.removefromCart}>Minus</Button> */}

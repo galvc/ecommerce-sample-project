@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Summary from "./Summary";
 import CartPagination from "./CartPagination";
 import { Heading } from "grommet";
 import { CartLayout } from "../styles/style.js";
-import "../styles/index.scss";
+import "../styles/index.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 class Checkout extends Component {

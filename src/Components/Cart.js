@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import Summary from "./Summary";
 import Checkout from "./Checkout";
 import { Heading } from "grommet";
 import { ImgCart, CartLayout } from "../styles/style.js";
 import CartPagination from "./CartPagination";
-import "../styles/index.scss";
+import "../styles/index.css";
 
 class Cart extends Component {
     displayOrder = (key) => {
