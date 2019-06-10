@@ -270,7 +270,7 @@ export const MainCover = styled.div`
     overflow-y: auto;
     background-size: cover;
     background-position: center;
-    background-image: url(/header-cover.jpg);
+    background-image: url(/header-cover-sm.jpg);
     background-image: image-set(
         url(/header-cover-sm.jpg) 1x,
         url(/header-cover.jpg) 2x
@@ -289,6 +289,7 @@ export const CartItem = styled.li`
     img {
         width: 150px;
         height: 150px;
+        object-fit: cover;
     }
 
     span {
@@ -299,7 +300,6 @@ export const CartItem = styled.li`
         img {
             width: 120px;
             height: 120px;
-            object-fit: cover;
         }
         span {
             padding: 1rem;

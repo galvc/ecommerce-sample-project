@@ -19,7 +19,7 @@ class Item extends Component {
 
     render() {
         const { name, image, price, description, status } = this.props.details;
-
+        var imagelarge = this.props.details.imagelarge + " 2x";
         return (
             <Box
                 animation="slideDown"
@@ -33,7 +33,7 @@ class Item extends Component {
                 basis="medium"
                 overflow="visible"
             >
-                <Img src={image} alt={name} />
+                <Img src={image} alt={name} srcset={imagelarge} />
 
                 <section className="item-header">
                     <Heading level="4" color="#254D32">

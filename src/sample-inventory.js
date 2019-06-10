@@ -1,7 +1,8 @@
 const inventory = {
     plant1: {
         name: "Money Plant",
-        image: "/images/money-tree.jpg",
+        image: "/images/money-tree@1x.jpg",
+        imagelarge: "/images/money-tree@2x.jpg",
         thumb: "/images/thumbnails/thumbnail_money-tree_200px.jpg",
         price: 25.0,
         description:
@@ -10,7 +11,8 @@ const inventory = {
     },
     plant2: {
         name: "Snake Plant",
-        image: "/images/snake-plant.jpg",
+        image: "/images/snake-plant@1x.jpg",
+        imagelarge: "/images/snake-plant@2x.jpg",
         thumb: "/images/thumbnails/thumbnail_snake-plant_200px.jpg",
 
         price: 15.0,
@@ -20,7 +22,8 @@ const inventory = {
     },
     plant3: {
         name: "ZZ Plant",
-        image: "/images/zz-plant.jpg",
+        image: "/images/zz-plant@1x.jpg",
+        imagelarge: "/images/zz-plant@2x.jpg",
         thumb: "/images/thumbnails/thumbnail_zz-plant_200px.jpg",
 
         price: 16.0,
@@ -30,7 +33,8 @@ const inventory = {
     },
     plant4: {
         name: "Calathea",
-        image: "/images/calathea.jpg",
+        image: "/images/calathea@1x.jpg",
+        imagelarge: "/images/calathea@2x.jpg",
         thumb: "/images/thumbnails/thumbnail_calathea_200px.jpg",
 
         price: 20.0,
@@ -40,7 +44,8 @@ const inventory = {
     },
     plant5: {
         name: "Pothos Jade",
-        image: "/images/pothos-jade.jpg",
+        image: "/images/pothos-jade@1x.jpg",
+        imagelarge: "/images/pothos-jade@2x.jpg",
         thumb: "/images/thumbnails/thumbnail_pothos-jade_200px.jpg",
 
         price: 24.0,

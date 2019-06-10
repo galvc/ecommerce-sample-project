@@ -13,10 +13,14 @@ class Cart extends Component {
         console.log("this is plant " + inventory);
         console.log("this is key " + key);
         console.log("this is count " + count);
-
+        var thumbnail = inventory.thumb + " 1x";
         return (
             <CartItem key={key}>
-                <img src={inventory.thumb} alt="inventory item" />
+                <img
+                    src={inventory.image}
+                    alt="inventory item"
+                    srcSet={thumbnail}
+                />
                 <span>
                     {inventory.name} : {count}
                 </span>
