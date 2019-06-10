@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Summary from "./Summary";
+import Checkout from "./Checkout";
 import { Heading } from "grommet";
-import { CartLayout, CartItem } from "../styles/style.js";
+import { ImgCart, CartLayout } from "../styles/style.js";
 import CartPagination from "./CartPagination";
 import "../styles/index.scss";
 
@@ -15,12 +16,12 @@ class Cart extends Component {
         console.log("this is count " + count);
 
         return (
-            <CartItem key={key}>
-                <img src={inventory.image} alt="inventory item" />
-                <span>
+            <li key={key} className="cart-item">
+                <ImgCart src={inventory.image} />
+                <span className="cart-item-desc">
                     {inventory.name} : {count}
                 </span>
-            </CartItem>
+            </li>
         );
     };
 

@@ -1,5 +1,4 @@
-@import "./variables";
-@import "./mixins";
+$green: #5e635f;
 
 * {
     margin: 0;
@@ -19,6 +18,9 @@ form {
 strong {
     font-weight: 400;
 }
+.wrap {
+    padding: 2rem 3rem;
+}
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -26,7 +28,7 @@ code {
 }
 
 a {
-    color: $dark-green;
+    color: $green;
 }
 
 ul,
@@ -51,36 +53,42 @@ li {
     display: inline-block;
 }
 
-div.wrap {
-    padding: 2rem auto;
+// .cart-button {
+//     margin: 1rem auto;
+//     display: flex;
+// }
 
-    @media (max-width: 600px) {
-        padding: 2rem 1rem;
-    }
-}
-
-.cover {
-    color: $cream;
+.cart-item {
     display: flex;
-    justify-content: center;
-    font-size: 2.5em;
+    padding: 0.75rem 0;
 }
 
-.block {
+.cart-item-desc {
+    padding: 2rem;
+}
+.summary-items-list {
+    margin-bottom: 16px;
+}
+.summary-items-list ul {
+    margin-left: 10px;
+}
+.li__summary-list {
     display: block;
 }
 
 /* CHECKOUT STYLES */
 
 input {
-    border: 1px solid $light-gray;
+    border: 1px solid #e0e4ee;
     border-radius: 5px;
     width: 100%;
     margin: 10px 0;
     padding: 10px;
     font-size: 1em;
 
-    @include border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 input.name {
@@ -99,12 +107,12 @@ input.input_small {
 }
 
 .label__select-wrapper {
-    border: 1px solid $light-gray;
+    border: 1px solid #e0e4ee;
     border-radius: 5px;
     margin: 10px 10px 10px 0;
     padding: 10px;
     font-size: 0.15em;
-    color: $dark-gray;
+    color: #757575;
     width: 20%;
 }
 
@@ -132,11 +140,11 @@ input.input_small {
     -webkit-appearance: none;
     -moz-appearance: none;
 
-    border: 1px $light-gray solid;
+    border: 1px #e0e4ee solid;
     background: transparent;
     margin: 16px 0 24px 16px;
     padding: 10px;
-    color: $dark-gray;
+    color: #757575;
 }
 
 @media only screen and (max-width: 480px) {

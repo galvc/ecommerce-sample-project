@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Plant from "./Plant";
 import Footer from "./Footer";
-import "../styles/index.scss";
 import { MainBox, AboutGrid, MainCover } from "../styles/style.js";
-import { Heading } from "grommet";
+import { Box, Heading } from "grommet";
 
 class Main extends Component {
     addToCart = (index) => {
@@ -21,17 +20,26 @@ class Main extends Component {
     render() {
         return (
             <div>
+                {/* <Box
+                    background="url(/header-cover.jpeg)"
+                    height="medium"
+                    align="center"
+                    responsive="true"
+                    pad="large"
+                > */}
                 <MainCover>
-                    <Heading
-                        level="1"
-                        size="xlarge"
-                        color="#F6F8EC"
-                        responsive="true"
-                        textAlign="center"
-                    >
+                    {/* the styles need to be customized further */}
+                    <Heading level="1" size="xlarge" color="#F6F8EC">
                         Green Studio
                     </Heading>
-                    <div className="cover">Find your plant companion here</div>
+                    <Heading
+                        level="3"
+                        color="#F6F8EC"
+                        margin={{ top: "medium" }}
+                    >
+                        Find your plant companion here.
+                    </Heading>
+                    {/* </Box> */}
                 </MainCover>
 
                 <AboutGrid>
