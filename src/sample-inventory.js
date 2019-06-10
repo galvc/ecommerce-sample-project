@@ -5,7 +5,7 @@ const inventory = {
         price: 25.0,
         description:
             "E. aureum is an evergreen vine growing to 20 m (66 ft) tall, with stems up to 4 cm (2 in) in diameter, climbing by means of aerial roots which adhere to surfaces.",
-        status: "available"
+        status: "sold out"
     },
     plant2: {
         name: "Snake Plant",
@@ -29,7 +29,7 @@ const inventory = {
         price: 20.0,
         description:
             "Calathea and their red-green leaves come in medallion and rattlesnake varieties",
-        status: "sold out"
+        status: "available"
     },
     plant5: {
         name: "Pothos Jade",

@@ -45,10 +45,14 @@ class Item extends Component {
                 <span className="description">{description}</span>
 
                 <span className="cart-button">
-                    <Button secondary onClick={this.addToCart}>
-                        {" "}
-                        Purchase{" "}
-                    </Button>
+                    {status === "sold out" ? (
+                        <Button disabled>Sold out</Button>
+                    ) : (
+                        <Button secondary onClick={this.addToCart}>
+                            {" "}
+                            Purchase{" "}
+                        </Button>
+                    )}
                 </span>
 
                 {/* <Button onClick={this.removefromCart}>Minus</Button> */}
