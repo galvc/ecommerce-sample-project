@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Heading } from "grommet";
 
 class Summary extends Component {
@@ -7,9 +6,8 @@ class Summary extends Component {
     //IMPROVEMENT: lift this function up to App so that the header can use
     //the count number
     totalCount = (orderKeys) => {
-        var total = [];
-        orderKeys.map((key) => {
-            total.push(this.props.cart[key]);
+        var total = orderKeys.map((key) => {
+            return this.props.cart[key];
         });
 
         return total.reduce((prev, curr) => {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Box, Heading } from "grommet";
 import { Img, Button } from "../styles/style.js";
-import "../styles/index.css";
+import "../styles/index.scss";
 
 //index is key passed from the map in main.js
 class Item extends Component {
@@ -34,7 +34,7 @@ class Item extends Component {
                 overflow="visible"
             >
                 <Img src={image} alt={name} />
-                
+
                 <section className="item-header">
                     <Heading level="4" color="#254D32">
                         {name}
